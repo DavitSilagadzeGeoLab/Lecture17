@@ -15,9 +15,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mcr-Dd-QBz">
+                                <rect key="frame" x="0.0" y="47" width="390" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="xU0-eE-50N"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Alcoholic"/>
+                                    <segment title="Non Alcoholic"/>
+                                    <segment title="Cocktail"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didTapDrinkType:" destination="BYZ-38-t0r" eventType="valueChanged" id="KIt-Gu-F6C"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1uL-So-UTk">
+                                <rect key="frame" x="0.0" y="92" width="390" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1uL-So-UTk" secondAttribute="bottom" id="3eb-Is-LcZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1uL-So-UTk" secondAttribute="trailing" id="5yT-Cg-ldz"/>
+                            <constraint firstItem="mcr-Dd-QBz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="94d-9U-k4r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mcr-Dd-QBz" secondAttribute="trailing" id="DHf-hK-hdf"/>
+                            <constraint firstItem="1uL-So-UTk" firstAttribute="top" secondItem="mcr-Dd-QBz" secondAttribute="bottom" id="JTs-Af-eu6"/>
+                            <constraint firstItem="mcr-Dd-QBz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Y3J-Id-3sJ"/>
+                            <constraint firstItem="1uL-So-UTk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xHl-bV-N2e"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="1uL-So-UTk" id="SFJ-5f-M35"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
